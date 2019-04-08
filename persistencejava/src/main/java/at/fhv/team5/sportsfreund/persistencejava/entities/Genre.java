@@ -20,7 +20,7 @@ import javax.persistence.OneToMany;
 public class Genre implements IEntity{
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer _id;
 	

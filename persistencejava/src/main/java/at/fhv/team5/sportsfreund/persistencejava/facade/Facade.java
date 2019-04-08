@@ -25,23 +25,22 @@ import at.fhv.team5.sportsfreund.persistencejava.repositories.LanguageRespositor
 
 public class Facade {
 
-	private EntityManagerFactory factory;
-	private EntityManager entityManager;
+	private EntityManager _entityManager;
 
 	public Facade() {
 		try {
-			factory = Persistence.createEntityManagerFactory("PersistenceUnit");
-			entityManager = factory.createEntityManager();
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("PersistenceUnit");
+			_entityManager = factory.createEntityManager();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
 	}
 
 	public void saveEntity(IEntity entity) {
-		EntityTransaction transaction = entityManager.getTransaction();
+		EntityTransaction transaction = _entityManager.getTransaction();
 	    try {
 	        transaction.begin();
-	        entityManager.persist(entity);
+	        _entityManager.persist(entity);
 	        transaction.commit();
 	    } catch (Exception e) {
 	        if (transaction.isActive()) {
@@ -52,61 +51,61 @@ public class Facade {
 	
 	public Actor loadActor(Integer id) {
 		ActorRepository rep = new ActorRepository();
-		return rep.load(entityManager, id);
+		return rep.load(_entityManager, id);
 	}
 	
 	public Genre loadGenre(Integer id) {
 		GenreRepository rep = new GenreRepository();
-		return rep.load(entityManager, id);
+		return rep.load(_entityManager, id);
 	}
 	
 	public Language loadLanguage(Integer id) {
 		LanguageRespository rep = new LanguageRespository();
-		return rep.load(entityManager, id);
+		return rep.load(_entityManager, id);
 	}
 	
 	public Film loadFilm(Integer id) {
 		FilmRepository rep = new FilmRepository();
-		return rep.load(entityManager, id);
+		return rep.load(_entityManager, id);
 	}
 	
 	public void removeActor(Integer id) {
 		ActorRepository rep = new ActorRepository();
-		rep.delete(entityManager, id);
+		rep.delete(_entityManager, id);
 	}
 	
 	public void removeGenre(Integer id) {
 		GenreRepository rep = new GenreRepository();
-		rep.delete(entityManager, id);
+		rep.delete(_entityManager, id);
 	}
 	
 	public void removeLanguage(Integer id) {
 		LanguageRespository rep = new LanguageRespository();
-		rep.delete(entityManager, id);
+		rep.delete(_entityManager, id);
 	}
 	
 	public void removeFilm(Integer id) {
 		FilmRepository rep = new FilmRepository();
-		rep.delete(entityManager, id);
+		rep.delete(_entityManager, id);
 	}
 	
 	public List<Actor> loadAllActors(){
 		ActorRepository rep = new ActorRepository();
-		return rep.loadAll(entityManager);
+		return rep.loadAll(_entityManager);
 	}
 	
 	public List<Genre> loadAllGenres(){
 		GenreRepository rep = new GenreRepository();
-		return rep.loadAll(entityManager);
+		return rep.loadAll(_entityManager);
 	}
 	
 	public List<Language> loadAllLanguages(){
 		LanguageRespository rep = new LanguageRespository();
-		return rep.loadAll(entityManager);
+		return rep.loadAll(_entityManager);
 	}
 	
 	public List<Film> loadAllFilms(){
 		FilmRepository rep = new FilmRepository();
-		return rep.loadAll(entityManager);
+		return rep.loadAll(_entityManager);
 	}
 }

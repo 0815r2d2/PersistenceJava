@@ -1,38 +1,51 @@
 package at.fhv.team5.sportsfreund.persistencejava;
 
-import junit.framework.Test;
+import at.fhv.team5.sportsfreund.persistencejava.entities.Actor;
+import at.fhv.team5.sportsfreund.persistencejava.entities.Film;
+import at.fhv.team5.sportsfreund.persistencejava.entities.Genre;
+import at.fhv.team5.sportsfreund.persistencejava.entities.Language;
+import at.fhv.team5.sportsfreund.persistencejava.facade.Facade;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest extends TestCase {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+	/**
+	 * Rigourous Test :-)
+	 */
+	public void testApp() {
+		Facade facade = new Facade();
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+		Genre horror = new Genre("Horror");
+		Genre fant = new Genre("Fantasy");
+		Genre ac = new Genre("Action");
+		facade.saveEntity(horror);
+		facade.saveEntity(fant);
+		facade.saveEntity(ac);
+
+		Language germ = new Language("Deutsch");
+		Language eng = new Language("Englisch");
+		Language sp = new Language("Spanisch");
+		facade.saveEntity(germ);
+		facade.saveEntity(eng);
+		facade.saveEntity(sp);
+
+		Actor act1 = new Actor("Orlando", "Bloom");
+		Actor act2 = new Actor("Ian", "McKellen");
+		Actor act3 = new Actor("Viggo", "Mortensen");
+		facade.saveEntity(act1);
+		facade.saveEntity(act2);
+		facade.saveEntity(act3);
+
+		Film hdr = new Film("Herr der Ringe", germ, fant);
+
+		hdr.getActors().add(act1);
+		hdr.getActors().add(act2);
+		hdr.getActors().add(act3);
+
+		facade.saveEntity(hdr);
+		assert(true);
+	}
 }
