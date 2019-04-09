@@ -17,9 +17,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "film")
 public class Film implements IEntity{
 	
 	@Id
@@ -30,22 +32,22 @@ public class Film implements IEntity{
 	@Column(name="title")
 	private String _title;
 	
-	@Column(name="releaseYear")
+	@Column(name="releaseyear")
 	private Integer _releaseYear;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name ="languageId")
+	@JoinColumn(name ="languageid")
 	private Language _language;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name ="genreId")
+	@JoinColumn(name ="genreid")
 	private Genre _genre;
 	
 	@ManyToMany
 	@JoinTable(
-			name="filmActor",
-			joinColumns = @JoinColumn(name ="filmId"),
-			inverseJoinColumns = @JoinColumn(name ="actorId")
+			name="filmactor",
+			joinColumns = @JoinColumn(name ="filmid"),
+			inverseJoinColumns = @JoinColumn(name ="actorid")
 	)
 	private List<Actor> _actors = new ArrayList<Actor>();
 	
