@@ -3,7 +3,7 @@
  * Version 1.0
  * 27.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencejava.entities;
+package at.fhv.persistencejava.entities;
 
 import java.util.ArrayList;
 import java.util.List;

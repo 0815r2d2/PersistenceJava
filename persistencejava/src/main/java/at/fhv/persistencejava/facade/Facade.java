@@ -3,7 +3,7 @@
  * Version 1.0
  * 28.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencejava.facade;
+package at.fhv.persistencejava.facade;
 
 import java.util.List;
 
@@ -12,15 +12,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import at.fhv.team5.sportsfreund.persistencejava.entities.Actor;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Film;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Genre;
-import at.fhv.team5.sportsfreund.persistencejava.entities.IEntity;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Language;
-import at.fhv.team5.sportsfreund.persistencejava.repositories.ActorRepository;
-import at.fhv.team5.sportsfreund.persistencejava.repositories.FilmRepository;
-import at.fhv.team5.sportsfreund.persistencejava.repositories.GenreRepository;
-import at.fhv.team5.sportsfreund.persistencejava.repositories.LanguageRespository;
+import at.fhv.persistencejava.entities.Actor;
+import at.fhv.persistencejava.entities.Film;
+import at.fhv.persistencejava.entities.Genre;
+import at.fhv.persistencejava.entities.IEntity;
+import at.fhv.persistencejava.entities.Language;
+import at.fhv.persistencejava.repositories.ActorRepository;
+import at.fhv.persistencejava.repositories.FilmRepository;
+import at.fhv.persistencejava.repositories.GenreRepository;
+import at.fhv.persistencejava.repositories.LanguageRespository;
 
 
 public class Facade {

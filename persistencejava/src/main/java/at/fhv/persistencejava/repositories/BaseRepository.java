@@ -3,7 +3,7 @@
  * Version 1.0
  * 28.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencejava.repositories;
+package at.fhv.persistencejava.repositories;
 
 import java.util.List;
 

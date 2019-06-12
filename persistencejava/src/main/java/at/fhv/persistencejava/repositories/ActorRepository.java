@@ -3,7 +3,7 @@
  * Version 1.0
  * 28.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencejava.repositories;
+package at.fhv.persistencejava.repositories;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import at.fhv.team5.sportsfreund.persistencejava.entities.Actor;
+import at.fhv.persistencejava.entities.Actor;
 
 public class ActorRepository implements BaseRepository<Actor> {
 

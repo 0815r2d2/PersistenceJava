@@ -3,7 +3,7 @@
  * Version 1.0
  * 28.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencejava.repositories;
+package at.fhv.persistencejava.repositories;
 
 import java.util.List;
 
@@ -13,38 +13,42 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import at.fhv.team5.sportsfreund.persistencejava.entities.Actor;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Genre;
+import at.fhv.persistencejava.entities.Actor;
+import at.fhv.persistencejava.entities.Language;
 
-public class GenreRepository implements BaseRepository<Genre> {
+public class LanguageRespository implements BaseRepository<Language> {
 
 	/* (non-Javadoc)
 	 * @see at.fhv.team5.sportsfreund.persistencejava.repositories.BaseRepository#loadAll(javax.persistence.EntityManager)
 	 */
-	public List<Genre> loadAll(EntityManager entityManager) {
+	public List<Language> loadAll(EntityManager entityManager) {
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Genre> query = builder.createQuery(Genre.class);
-		Root<Genre> root = query.from(Genre.class);
+		CriteriaQuery<Language> query = builder.createQuery(Language.class);
+		Root<Language> root = query.from(Language.class);
 
-		CriteriaQuery<Genre> selectQuery = query.select(root);
-		TypedQuery<Genre> typedQuery = entityManager.createQuery(selectQuery);
+		CriteriaQuery<Language> selectQuery = query.select(root);
+		TypedQuery<Language> typedQuery = entityManager.createQuery(selectQuery);
 		return typedQuery.getResultList();
 	}
 
 	/* (non-Javadoc)
 	 * @see at.fhv.team5.sportsfreund.persistencejava.repositories.BaseRepository#load(javax.persistence.EntityManager, java.lang.Integer)
 	 */
-	public Genre load(EntityManager entityManager, Integer id) {
-		return entityManager.find(Genre.class, id);
+	public Language load(EntityManager entityManager, Integer id) {
+		return entityManager.find(Language.class, id);
 	}
 
 	/* (non-Javadoc)
 	 * @see at.fhv.team5.sportsfreund.persistencejava.repositories.BaseRepository#delete(javax.persistence.EntityManager, java.lang.Integer)
 	 */
 	public void delete(EntityManager entityManager, Integer id) {
-		Genre emp = load(entityManager, id);
+		Language emp = load(entityManager, id);
 	    if (emp != null) {
 	    	entityManager.remove(emp);
 	    }
 	}
+	
+	
+
+	
 }

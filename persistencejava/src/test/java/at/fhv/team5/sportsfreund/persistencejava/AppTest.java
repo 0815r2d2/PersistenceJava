@@ -1,10 +1,10 @@
 package at.fhv.team5.sportsfreund.persistencejava;
 
-import at.fhv.team5.sportsfreund.persistencejava.entities.Actor;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Film;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Genre;
-import at.fhv.team5.sportsfreund.persistencejava.entities.Language;
-import at.fhv.team5.sportsfreund.persistencejava.facade.Facade;
+import at.fhv.persistencejava.entities.Actor;
+import at.fhv.persistencejava.entities.Film;
+import at.fhv.persistencejava.entities.Genre;
+import at.fhv.persistencejava.entities.Language;
+import at.fhv.persistencejava.facade.Facade;
 import junit.framework.TestCase;
 
 /**
